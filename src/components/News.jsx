@@ -28,6 +28,7 @@ export default function News() {
               <img
                 src={article.urlToImage}
                 width={70}
+                alt="pix"
                 className="rounded-xl"
               />
             </div>
