@@ -7,6 +7,8 @@ export default function News() {
   const [articleNum, setArticleNum] = useState(3);
   useEffect(() => {
     fetch("https://saurav.tech/NewsAPI/top-headlines/category/business/us.json")
+        // fetch("https://saurav.tech/NewsAPI/everything/cnn.json")
+        // fetch("https://saurav.tech/NewsAPI/top-headlines/category/health/in.json")
       .then((res) => res.json())
       .then((data) => {
         setNews(data.articles);
