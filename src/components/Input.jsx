@@ -39,6 +39,7 @@ export default function Input() {
     if (selectedFile) {
       uploadImageToStorage();
     }
+    // eslint-disable-next-line
   }, [selectedFile])
 
   const uploadImageToStorage = () => {
