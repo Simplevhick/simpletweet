@@ -21,6 +21,8 @@ import { app } from "../firebase";
 import { useEffect, useState } from "react";
 import { modalState, postIdState } from "../atom/modalAtom";
 import { useRecoilState } from "recoil";
+import Image from "next/image";
+
 
 export default function Icons({ id, uid }) {
   const { data: session } = useSession();

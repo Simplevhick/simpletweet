@@ -10,13 +10,14 @@ import {
   serverTimestamp,
   deleteDoc,
 } from "firebase/firestore";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HiDotsHorizontal, HiHeart, HiOutlineHeart } from "react-icons/hi";
 import { signIn, useSession } from "next-auth/react";
+import Image from "next/image";
 
 export default function Comment({ comment, commentId, originalPostId }) {
   const [isLiked, setIsLiked] = useState(false);
-  const [likes, isLikes] = useState([]);
+  const [likes, setLikes] = useState([]);
   const { data: session } = useSession();
   const db = getFirestore(app);
 
@@ -79,7 +80,8 @@ export default function Comment({ comment, commentId, originalPostId }) {
         src={comment?.userImg}
         alt="img"
         className="h-9 w-9 rounded-full mr-4"
-      />
+        />
+      
       <div className="flex-1">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-1 whitespace-nowrap">
